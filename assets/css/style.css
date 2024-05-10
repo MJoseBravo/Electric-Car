@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "nav"
+    "section"
+    "main"
+    "article"
+    "footer";
+    min-height: 100vh;
+}
+
+/*Barra de menu*/
+nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #0059A1;
+    color: white;
+
+}
+
+.menu {
+    justify-content: space-between;
+   
+}
+
+.imagen-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;    
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;   
+}
+
+/*Barra de busqueda*/
+section {
+    grid-area: section;
+    background-color: rgb(210, 209, 209);
+    
+}
+
+.filtros {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.filtro-busqueda select {
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+/*Galería de productos*/
+main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;    
+}
+
+.cards img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.auto1 h3 {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.auto1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card1 {
+    border: 1px solid gray;
+    padding: 20px 0;
+}
+
+.card2 {
+    border: 1px solid gray;
+    padding: 20px 0;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #0059A1;
+    background: #0059A1;
+    color: white;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100px;
+}
+
+/*Barra de navegacion Mobile*/
+article {
+    grid-area: article;
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.lista a {
+    border: 1px solid gray;
+    padding: 10px 15px;
+    color: blue;
+}
+.lista i {
+    border: 1px solid gray;
+    padding: 10px;
+    color: blue;
+}
+
+/*Pie de pagina*/
+footer {
+    grid-area: footer;
+    background: #003070;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/*Versión Mobile*/
+@media (max-width: 576px) {
+    .card2 {
+        display: none
+    }
+
+    .menu-list {
+        display: none;
+    }
+}
+
+/*Versión Tablet*/
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-columns: 2fr, 7fr;
+        
+        grid-template-areas: 
+        "nav section"
+        "nav main"
+        "footer main";
+        max-width: 1495px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        min-width: 150px;
+    }
+
+    .barra-menu {
+        display: none;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 30px;
+    }
+
+    .menu-list li {
+        list-style: none;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .filtros {
+        margin-top: 0;
+        padding-top: 10px;
+        max-height: 106px;
+    }
+
+    .filtro-busqueda select {
+        margin-bottom: 20px;
+    }
+   
+    main {
+        min-height: calc(100vh - 106px);
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;  
+    }
+    
+    article {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+        max-width: 210px;   
+    }
+
+    footer p {
+        display: flex;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+}
+
+/*Versión Desktop*/
+@media (min-width: 992px) {
+    .grid-container {
+        grid-template-columns: 2fr, 7fr;
+        
+        grid-template-areas: 
+        "nav section"
+        "nav main"
+        "footer main";
+        max-width: 1495px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        min-width: 150px;
+    }
+
+    .barra-menu {
+        display: none;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 30px;
+    }
+
+    .menu-list li {
+        list-style: none;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .filtros {
+        margin-top: 0;
+        padding-top: 10px;
+        max-height: 106px;
+    }
+   
+    main {
+        min-height: calc(100vh - 106px);
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    article {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+        max-width: 210px;   
+    }
+
+    footer p {
+        display: flex;
+        text-align: center;
+        padding-top: 10px;
+    }
+}
